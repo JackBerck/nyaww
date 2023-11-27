@@ -1,2 +1,2 @@
 # Nyaww
-Buat nampung yang dikirim dia ngek
+Buat nampung apa yang si nyaw ditanyakan *biar lebih fleksibel wjwjwj
