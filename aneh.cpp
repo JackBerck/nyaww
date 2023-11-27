@@ -3,35 +3,45 @@
 #include <vector>
 #include <ctime>
 #include <cstdlib>
+#include <limits>
 
 using namespace std;
 
-string generateNomorPesanan() {
+string generateNomorPesanan()
+{
     srand(time(0));
     return to_string(rand() % 10000) + to_string(time(0));
 }
 
-void kirimKonfirmasi(const string& kontak) {
+void kirimKonfirmasi(const string &kontak)
+{
     cout << "Konfirmasi pemesanan telah dikirim ke " << kontak << endl;
 }
 
-void generateNomorVirtualAccount() {
+void generateNomorVirtualAccount()
+{
     srand(time(0));
     cout << "Nomor Virtual Account: " << rand() % 1000000 << endl;
 }
 
-void tampilkanPesananTerkonfirmasi(const vector<string>& pesananTerkonfirmasi) {
-    if (pesananTerkonfirmasi.empty()) {
+void tampilkanPesananTerkonfirmasi(const vector<string> &pesananTerkonfirmasi)
+{
+    if (pesananTerkonfirmasi.empty())
+    {
         cout << "Belum ada pesanan yang terkonfirmasi." << endl;
-    } else {
+    }
+    else
+    {
         cout << "=== Pesanan Terkonfirmasi ===" << endl;
-        for (const string& pesanan : pesananTerkonfirmasi) {
+        for (const string &pesanan : pesananTerkonfirmasi)
+        {
             cout << pesanan << endl;
         }
     }
 }
 
-bool lakukanPembayaranOnline() {
+bool lakukanPembayaranOnline()
+{
     cout << "Pilih metode pembayaran online:" << endl;
     cout << "1. Kartu Kredit" << endl;
     cout << "2. Transfer Bank" << endl;
@@ -43,25 +53,26 @@ bool lakukanPembayaranOnline() {
 
     string nomorPembayaran;
 
-    switch (metodePembayaran) {
-        case 1:
-            cout << "Masukkan nomor kartu kredit: ";
-            cin >> nomorPembayaran;
-            // Logika verifikasi kartu kredit (misalnya, validasi panjang nomor kartu, CVV, dll.)
-            break;
-        case 2:
-            cout << "Masukkan nomor rekening bank: ";
-            cin >> nomorPembayaran;
-            // Logika verifikasi nomor rekening bank (misalnya, validasi panjang nomor rekening, nama pemilik, dll.)
-            break;
-        case 3:
-            cout << "Masukkan nomor e-wallet: ";
-            cin >> nomorPembayaran;
-            // Logika verifikasi nomor e-wallet (misalnya, validasi panjang nomor e-wallet, PIN, dll.)
-            break;
-        default:
-            cout << "Metode pembayaran tidak valid." << endl;
-            return false;
+    switch (metodePembayaran)
+    {
+    case 1:
+        cout << "Masukkan nomor kartu kredit: ";
+        cin >> nomorPembayaran;
+        // Logika verifikasi kartu kredit (misalnya, validasi panjang nomor kartu, CVV, dll.)
+        break;
+    case 2:
+        cout << "Masukkan nomor rekening bank: ";
+        cin >> nomorPembayaran;
+        // Logika verifikasi nomor rekening bank (misalnya, validasi panjang nomor rekening, nama pemilik, dll.)
+        break;
+    case 3:
+        cout << "Masukkan nomor e-wallet: ";
+        cin >> nomorPembayaran;
+        // Logika verifikasi nomor e-wallet (misalnya, validasi panjang nomor e-wallet, PIN, dll.)
+        break;
+    default:
+        cout << "Metode pembayaran tidak valid." << endl;
+        return false;
     }
 
     // Logika untuk memproses pembayaran (misalnya, verifikasi dan konfirmasi pembayaran)
@@ -71,62 +82,83 @@ bool lakukanPembayaranOnline() {
     return true;
 }
 
-int main() {
+int main()
+{
     vector<string> pesananTerkonfirmasi;
 
     int pilihan;
-    do {
+    do
+    {
         cout << "============================================" << endl;
         cout << "=== Selamat Datang di Aplikasi Pemesanan Tiket Bus Nana ===" << endl;
         cout << "1. Pesan Tiket" << endl;
         cout << "2. Lihat Daftar Pesanan Terkonfirmasi" << endl;
         cout << "0. Keluar" << endl;
-        cout << "Pilihan Anda: "; 
+        cout << "Pilihan Anda: ";
         cin >> pilihan;
 
-        switch (pilihan) {
-            case 1: {
-                string dari, tujuan, tanggal, kursi, nomorPesanan, kontak;
-                int jumlahPenumpang;
+        switch (pilihan)
+        {
+        case 1:
+        {
+            string dari, tujuan, tanggal, kursi, nomorPesanan, kontak;
+            int jumlahPenumpang;
 
-                cout << endl << "Dari mana: "; cin >> dari;
-                cout << endl << "Mau kemana: "; cin >> tujuan;
-                cout << endl << "Tanggal: "; cin >> tanggal;
-                cout << endl << "Jumlah Penumpang: "; cin >> jumlahPenumpang;
-                cout << endl << "Pilih Kursi: "; cin >> kursi;
-                cout << endl << "Nomor Telepon/Email (untuk konfirmasi): "; cin >> kontak;
+            cout << "Dari mana: ";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            getline(cin, dari);
 
-                nomorPesanan = generateNomorPesanan();
+            cout << "Mau kemana: ";
+            getline(cin, tujuan);
 
-                cout << "Pesanan Anda berhasil dikonfirmasi!" << endl;
-                cout << "Nomor Pesanan: " << nomorPesanan << endl;
+            cout << "Tanggal: ";
+            getline(cin, tanggal);
 
-                kirimKonfirmasi(kontak);
-                generateNomorVirtualAccount();
+            cout << "Jumlah Penumpang: ";
+            cin >> jumlahPenumpang;
 
-                cout << "Apakah Anda ingin melakukan pembayaran online? (1: Ya, 0: Tidak) ";
-                int opsiPembayaran;
-                cin >> opsiPembayaran;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                if (opsiPembayaran == 1 && lakukanPembayaranOnline()) {
-                    pesananTerkonfirmasi.push_back("Nomor Pesanan: " + nomorPesanan +
-                                                  " | Tujuan: " + tujuan +
-                                                  " | Tanggal: " + tanggal +
-                                                  " | Kursi: " + kursi +
-                                                  " | Kontak: " + kontak);
-                } else {
-                    cout << "Pembayaran gagal atau dibatalkan. Pesanan tidak disimpan." << endl;
-                }
-                break;
+            cout << "Pilih Kursi: ";
+            getline(cin, kursi);
+
+            cout << "Nomor Telepon/Email (untuk konfirmasi): ";
+            getline(cin, kontak);
+
+            nomorPesanan = generateNomorPesanan();
+
+            cout << "Pesanan Anda berhasil dikonfirmasi!" << endl;
+            cout << "Nomor Pesanan: " << nomorPesanan << endl;
+
+            kirimKonfirmasi(kontak);
+            generateNomorVirtualAccount();
+
+            cout << "Apakah Anda ingin melakukan pembayaran online? (1: Ya, 0: Tidak) ";
+            int opsiPembayaran;
+            cin >> opsiPembayaran;
+
+            if (opsiPembayaran == 1 && lakukanPembayaranOnline())
+            {
+                pesananTerkonfirmasi.push_back("Nomor Pesanan: " + nomorPesanan +
+                                               " | Tujuan: " + tujuan +
+                                               " | Tanggal: " + tanggal +
+                                               " | Kursi: " + kursi +
+                                               " | Kontak: " + kontak);
             }
-            case 2:
-                tampilkanPesananTerkonfirmasi(pesananTerkonfirmasi);
-                break;
-            case 0:
-                cout << "Terima kasih telah menggunakan aplikasi pemesanan tiket bus." << endl;
-                break;
-            default:
-                cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+            else
+            {
+                cout << "Pembayaran gagal atau dibatalkan. Pesanan tidak disimpan." << endl;
+            }
+            break;
+        }
+        case 2:
+            tampilkanPesananTerkonfirmasi(pesananTerkonfirmasi);
+            break;
+        case 0:
+            cout << "Terima kasih telah menggunakan aplikasi pemesanan tiket bus." << endl;
+            break;
+        default:
+            cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
         }
 
     } while (pilihan != 0);
