@@ -15,3 +15,63 @@ b. Inisialisasi variabel untuk menyimpan hasil faktorial dengan nilai 1 (karena 
 c. Gunakan loop untuk mengalikan angka dari 1 hingga bilangan yang dimasukkan oleh pengguna.
 d. Simpan hasil perkalian ke dalam variabel faktorial.
 e. Tampilkan hasil faktorial kepada pengguna.
+
+Soal 1: Menghitung Luas Persegi Panjang
+Buatlah program C++ untuk menghitung luas persegi panjang. Program harus meminta input panjang dan lebar dari pengguna, lalu menghitung dan menampilkan luasnya.
+
+Soal 2: Menentukan Bilangan Ganjil atau Genap
+Buatlah program C++ yang meminta pengguna memasukkan sebuah bilangan bulat. Program kemudian menentukan apakah bilangan tersebut ganjil atau genap, lalu menampilkan hasilnya.
+
+Soal 3: Menghitung Faktorial
+Buatlah program C++ yang menghitung faktorial dari sebuah bilangan bulat positif. Program harus meminta input bilangan dari pengguna, lalu menghitung dan menampilkan hasil faktorialnya.
+
+Soal 4: Menentukan Bilangan Prima
+Buatlah program C++ yang meminta pengguna memasukkan sebuah bilangan bulat positif. Program kemudian menentukan apakah bilangan tersebut prima atau bukan, lalu menampilkan hasilnya.
+
+Soal 5: Menghitung Deret Fibonacci
+Buatlah program C++ untuk menghasilkan deret Fibonacci hingga suku ke-n, dimana n adalah bilangan bulat yang dimasukkan oleh pengguna. Tampilkan deret Fibonacci tersebut.
+
+Soal 6: Menghitung Nilai Rata-rata
+Buatlah program C++ yang meminta pengguna memasukkan sejumlah bilangan bulat. Program harus menghitung nilai rata-rata dari bilangan-bilangan tersebut, lalu menampilkannya.
+
+Soal 7: Menentukan Bilangan Terbesar
+Buatlah program C++ yang meminta pengguna memasukkan tiga bilangan bulat. Program harus menentukan bilangan terbesar di antara ketiganya, lalu menampilkannya.
+
+Soal 8: Konversi Suhu
+Buatlah program C++ yang mengkonversi suhu dari Celsius ke Fahrenheit atau sebaliknya. Program harus meminta pengguna memilih jenis konversi (Celsius ke Fahrenheit atau sebaliknya), lalu meminta input suhu dan menampilkan suhu yang telah dikonversi.
+
+Soal 9: Kalkulator Sederhana
+Buatlah kalkulator sederhana menggunakan C++ yang dapat melakukan operasi penjumlahan, pengurangan, perkalian, dan pembagian. Program harus meminta dua bilangan dari pengguna dan operasi yang diinginkan, lalu menampilkan hasilnya.
+
+Soal 10: Mencetak Pola Segitiga
+Buatlah program C++ yang mencetak pola segitiga menggunakan simbol '*' atau angka. Program harus meminta tinggi segitiga dari pengguna, lalu mencetak segitiga sesuai pola yang diinginkan.
+
+Silakan coba mengerjakan salah satu atau beberapa soal di atas. Jika Anda mengalami kesulitan atau memiliki pertanyaan spesifik tentang salah satu soal, jangan ragu untuk bertanya!
+
+
+
+
+User
+bisakah anda memberikan gambaran secara umum menggunakan kalimat (langkah langkah) untuk soal nomor 1 sampai 3 (tidak menggunakan code)
+ChatGPT
+Tentu, berikut adalah gambaran umum langkah-langkah untuk menyelesaikan soal nomor 1 hingga 3 tanpa menggunakan kode:
+
+Soal 1: Menghitung Luas Persegi Panjang
+
+Minta pengguna memasukkan panjang dan lebar persegi panjang.
+Simpan nilai panjang dan lebar ke dalam variabel.
+Hitung luas persegi panjang dengan rumus: luas = panjang × lebar.
+Tampilkan hasil luas kepada pengguna.
+Soal 2: Menentukan Bilangan Ganjil atau Genap
+
+Minta pengguna memasukkan sebuah bilangan bulat.
+Periksa apakah bilangan tersebut habis dibagi dua (gunakan operasi modulo %). Jika sisa pembagian = 0, bilangan tersebut genap. Jika tidak, bilangan tersebut ganjil.
+Tampilkan hasil (ganjil atau genap) kepada pengguna.
+Soal 3: Menghitung Faktorial
+
+Minta pengguna memasukkan sebuah bilangan bulat positif.
+Inisialisasi variabel untuk menyimpan hasil faktorial dengan nilai 1 (karena 0! = 1).
+Gunakan loop untuk mengalikan angka dari 1 hingga bilangan yang dimasukkan oleh pengguna.
+Simpan hasil perkalian ke dalam variabel faktorial.
+Tampilkan hasil faktorial kepada pengguna.
+Semua tiga soal ini melibatkan interaksi dengan pengguna untuk memasukkan data, melakukan perhitungan atau operasi logika, dan menampilkan hasilnya. Dengan memahami langkah-langkah umum ini, Anda dapat mulai menulis kode dalam bahasa C++ untuk menyelesaikan soal-soal tersebut.
